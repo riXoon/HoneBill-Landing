@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Landing Pages"
+  short_description: "Build responsive landing pages with motion and 3D"
+  default_prompt: "Use $frontend-landing-pages to implement this Figma landing page with responsive layouts, accessible motion, and a performant 3D hero."

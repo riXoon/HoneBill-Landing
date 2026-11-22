@@ -1,0 +1,154 @@
+---
+import '../styles/global.css';
+const benefits = [
+  ['benefit1', 'Send & receive', 'From small payments to everyday transfers, keep your money moving in one place.'],
+  ['benefit2', 'Make it a QR away', 'Scan a code or share your own. Less typing, more time for what matters.'],
+  ['benefit3', 'See the full picture', 'Keep online and offline balances in view, with your recent activity close by.'],
+];
+const screens = [['screen1','01 / YOUR HOME','Your wallet at a glance'],['screen2','02 / OFFLINE MODE','Stay ready, even offline'],['screen3','03 / TRANSACTIONS','Keep the details in sight'],['screen4','04 / DIGITAL RECEIPTS','A record of every send']];
+const features = [['Zero-Data SMS Transport Layer','Send payment authorizations via SMS, compressed and signed, without internet or mobile data.'],['Dynamic Payload QR Code Relay','Create a secure QR code with your pre-signed transaction.'],['Human-Readable ShortIDs','Short IDs linked to mobile numbers make identification easier.'],['Offline-First Local Transaction Management','View and manage transaction histories without constant cloud access.'],['Blockchain-Powered Trust & Soroban Smart Contracts','Stellar and Soroban smart contracts verify signatures and prevent double-spending.']];
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Meet HoneBill, the wallet for your world, online or off." /><title>HoneBill — Your money. Your world.</title></head>
+<body>
+<header class="header">
+  <a class="header-brand" href="#top" aria-label="HoneBill home"><img src="/assets/wordmark.svg" alt="HoneBill" class="wordmark" /></a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#preview">App preview</a>
+    <a href="#features">How it works</a>
+    <a href="#contact">Contacts</a>
+    <a class="button primary header-cta" href="#contact">Get early access →</a>
+  </nav>
+  <details class="mobile-menu">
+    <summary aria-label="Toggle navigation"><span></span><span></span><span></span></summary>
+    <nav aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#preview">App preview</a>
+      <a href="#features">How it works</a>
+      <a href="#contact">Contacts</a>
+      <a class="button primary" href="#contact">Get early access →</a>
+    </nav>
+  </details>
+</header>
+<main id="top"><section class="hero container"><div class="hero-copy"><p class="eyebrow"><span>API</span>ARISTS.</p><h1>Your money.<br />Your world.<br /><em>Online or off.</em></h1><p>Send, receive, and keep track of your money. A connection shouldn’t decide when life happens. Prepare an offline transfer and share a QR voucher that can be relayed when a connection is available.</p><div class="actions"><a class="button primary" href="#contact">Get early access ↗</a><a class="button secondary" href="#preview">Explore the app ↓</a></div></div><div class="hero-art"><div class="spotlight" aria-hidden="true"><img src="/assets/spotlight.svg" alt="" /></div><div class="phone phone-back"><img src="/assets/phone1.png" alt="" /></div><div class="phone phone-front"><img src="/assets/phone2.png" alt="HoneBill app preview" /></div><div class="status"><strong>● &nbsp;Online or offline</strong><small>Your wallet stays with you</small></div></div></section>
+<section class="benefits container" aria-label="Benefits">{benefits.map(([icon,title,text]) => <article class="benefit reveal"><span class="benefit-icon"><img src={`/assets/${icon}.svg`} alt="" /></span><h2>{title}</h2><p>{text}</p></article>)}</section>
+<div class="design-background"><div class="warm-section"><section id="about" class="about container reveal"><div class="mascot"><span class="pill">BUILT FOR EVERYONE</span><div class="mascot-art" role="img" aria-label="Honi holding a phone"><img class="mascot-fallback" src="/assets/honi.png" alt="" loading="lazy" /><div class="mascot-animation" aria-hidden="true"></div></div></div><div class="about-copy"><img src="/assets/brand.svg" alt="HoneBill" class="brand" /><p>HoneBill is an offline-first peer-to-peer digital payment application designed to bridge the financial inclusion gap in low-bandwidth and remote communities. Using SMS and Stellar blockchain technology with Soroban smart contracts, HoneBill enables users to securely authorize financial transactions even without mobile internet data.</p><div class="steps"><span>01 &nbsp; Prepare your transfer</span><span>02 &nbsp; Share your offline QR voucher</span><span>03 &nbsp; Relay and sync when back online</span></div><small>Offline transfers remain pending until relayed and synced.</small></div></section>
+<section id="preview" class="preview container"><div class="preview-main"><div class="reveal"><h2>A familiar feel. A smarter flow.</h2><p>From your first balance check to your next transfer, it’s all right here.</p></div><div class="screens">{screens.map(([image,label,title]) => <article class="screen reveal"><div class="screen-frame"><img src={`/assets/${image}.png`} alt={title} loading="lazy" /></div><small>{label}</small><h3>{title}</h3></article>)}</div></div><div class="demo reveal"><img src="/assets/logo.svg" alt="HoneBill" /><span>DEMO VIDEO</span></div></section></div>
+<section id="features" class="features container"><div class="section-heading reveal"><span>✿</span><h2>Features &amp; Functionalities</h2><p>Ensuring your transactions are secured and efficient.</p></div><div class="feature-grid">{features.map(([title,text],index) => <article class:list={['feature','reveal',{wide:index===4}]}><img src={`/assets/feature${index+1}.svg`} alt="" /><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></section>
+<section id="contact" class="faq"><div class="faq-inner container"><img class="collage" src="/assets/collage.png" alt="" loading="lazy" /><div class="faq-intro reveal"><div><h2>A little clarity,<br />before you go.</h2><p>Get to know your HONEBILL wallet.</p></div><div class="faq-mark" aria-hidden="true"><img src="/assets/faq1.svg" alt="" /><img src="/assets/faq2.svg" alt="" /><img src="/assets/faq3.svg" alt="" /><img src="/assets/faq4.svg" alt="" /><img src="/assets/faq5.svg" alt="" /><img src="/assets/faq6.svg" alt="" /></div></div><div class="questions reveal"><details open><summary>What is HONEBILL?</summary><p>A digital wallet for sending, receiving, and keeping track of your money, with online and offline transfer flows.</p></details><details open><summary>How do offline transfers work?</summary><p>Create an offline QR voucher and share it for relay. Transfers await a connection to be relayed and synced.</p></details><details open><summary>What can I see in the app?</summary><p>Your online and offline balances, recent activity, transaction history, QR codes, and transfer receipts.</p></details></div></div></section></div></main>
+<footer><div class="container footer-inner"><div class="footer-brand"><img src="/assets/footer-logo.svg" alt="HoneBill" /><p>Your money. Your world. Online or off.</p><small>© 2026 HONEBILL. All rights reserved.</small></div><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#contact">Contact us</a><a href="#top">Back to top ↑</a></nav><div class="footer-credit"><p>Created by</p><strong><span>API</span>ARISTS.</strong></div></div></footer>
+<script>
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
+const mobileMenu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  mobileMenu.open = false;
+}));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileMenu?.open) {
+    mobileMenu.open = false;
+    mobileMenu.querySelector('summary')?.focus();
+  }
+});
+const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const mascotArt = document.querySelector<HTMLElement>('.mascot-art');
+const mascotContainer = mascotArt?.querySelector<HTMLElement>('.mascot-animation');
+let mascotAnimation: import('lottie-web').AnimationItem | undefined;
+let mascotVisible = false;
+let mascotLoading = false;
+
+function updateMascotPlayback() {
+  if (!mascotAnimation) return;
+  if (preference.matches) {
+    mascotAnimation.goToAndStop(0, true);
+  } else if (mascotVisible && !document.hidden) {
+    mascotAnimation.play();
+  } else {
+    mascotAnimation.pause();
+  }
+}
+
+async function loadMascotAnimation() {
+  if (!mascotContainer || mascotAnimation || mascotLoading) return;
+  mascotLoading = true;
+  try {
+    const { default: lottie } = await import('lottie-web');
+    mascotAnimation = lottie.loadAnimation({
+      container: mascotContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: false,
+      path: '/assets/honi-phone.json',
+    });
+    mascotAnimation.addEventListener('DOMLoaded', () => {
+      mascotArt?.classList.add('animation-ready');
+      updateMascotPlayback();
+    });
+    mascotAnimation.addEventListener('data_failed', () => {
+      mascotAnimation?.destroy();
+      mascotAnimation = undefined;
+      mascotLoading = false;
+      mascotArt?.classList.remove('animation-ready');
+    });
+  } catch {
+    mascotLoading = false;
+  }
+}
+
+if (mascotArt && 'IntersectionObserver' in window) {
+  const mascotObserver = new IntersectionObserver(([entry]) => {
+    mascotVisible = entry.isIntersecting;
+    if (mascotVisible && !preference.matches) void loadMascotAnimation();
+    updateMascotPlayback();
+  });
+  mascotObserver.observe(mascotArt);
+} else if (mascotArt) {
+  mascotVisible = true;
+  if (!preference.matches) void loadMascotAnimation();
+}
+document.addEventListener('visibilitychange', updateMascotPlayback);
+preference.addEventListener('change', () => {
+  if (mascotVisible && !preference.matches) void loadMascotAnimation();
+  updateMascotPlayback();
+});
+const motionGroups = [
+  { selector: '.hero-copy > *', effect: 'left' },
+  { selector: '.hero-art', effect: 'right' },
+  { selector: '.benefit', effect: 'up' },
+  { selector: '.mascot', effect: 'left' },
+  { selector: '.about-copy > *', effect: 'right' },
+  { selector: '.preview-main > .reveal', effect: 'up' },
+  { selector: '.screen', effect: 'lift' },
+  { selector: '.demo', effect: 'right' },
+  { selector: '.section-heading, .feature', effect: 'up' },
+  { selector: '.faq .collage', effect: 'fade' },
+  { selector: '.faq-intro', effect: 'left' },
+  { selector: '.questions details', effect: 'right' },
+  { selector: '.footer-inner > *', effect: 'up' },
+];
+document.querySelectorAll('.about.reveal, .questions.reveal').forEach(element => element.classList.remove('reveal'));
+motionGroups.forEach(({ selector, effect }) => {
+  document.querySelectorAll<HTMLElement>(selector).forEach((element, index) => {
+    element.classList.add('reveal');
+    element.dataset.reveal = effect;
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 90}ms`);
+  });
+});
+let lenis: Lenis | undefined;
+let frame = 0;
+let observer: IntersectionObserver | undefined;
+function setupMotion() {
+  lenis?.destroy(); cancelAnimationFrame(frame); observer?.disconnect();
+  if (preference.matches) { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); return; }
+  lenis = new Lenis({ anchors: true, smoothWheel: true, lerp: 0.05, });
+  const tick = (time: number) => { lenis?.raf(time); frame = requestAnimationFrame(tick); };
+  frame = requestAnimationFrame(tick);
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js-motion');
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => entry.target.classList.toggle('visible', entry.isIntersecting));
+  }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer?.observe(el));
+}
+setupMotion(); preference.addEventListener('change', setupMotion);
+</script></body></html>
